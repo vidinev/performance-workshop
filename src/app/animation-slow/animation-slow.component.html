@@ -1,0 +1,11 @@
+<div class="p-2">
+    <button class="btn btn-dark mr-3" (click)="start()">Start</button>
+    <button class="btn btn-danger mr-3" (click)="stop()">Stop</button>
+    <button class="btn btn-secondary" (click)="calculatePI()">Run script</button>
+</div>
+
+<div class="wrapper d-flex">
+    <div class="bar" *ngFor="let bar of bars; trackBy: trackByIndex;" [style.height.%]="bar"></div>
+</div>
+
+

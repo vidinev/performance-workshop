@@ -19,6 +19,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Raster'
   }
+}, {
+  path: 'animation-slow',
+  loadChildren: () => import('./animation-slow/animation-slow.module').then(m => m.AnimationSlowModule),
+  data: {
+    title: 'Animation slow'
+  }
 }];
 
 @NgModule({
