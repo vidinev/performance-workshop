@@ -1,0 +1,13 @@
+<div class="main-container">
+    <nav class="navbar navbar-light bg-light rounded orange-border font-weight-bold">
+        <a class="navbar-brand text-body text-uppercase text-bold" href="#">{{title}}</a>
+    </nav>
+    <ul class="nav flex-column bg-light rounded orange-border">
+        <li class="nav-item d-block py-2" *ngFor="let menuItem of menu">
+            <a class="nav-link active text-body" href="#">{{menuItem?.title}}</a>
+        </li>
+    </ul>
+    <div class="main bg-light rounded orange-border">
+        <ws-news-block [news]="news"></ws-news-block>
+    </div>
+</div>

@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import "variables";
+
+body {
+  background: #2e3138;
+  padding: $gap $gap 0;
+}
+
+.text-loading-ph {
+  &:empty {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 1.2rem;
+      width: 40%;
+      border-radius: .6rem;
+      background-color: $ph-dark;
+    }
+  }
+}
+
+.image-loading-ph {
+  background-color: $ph-dark;
+}
+
+.content-loading-ph {
+  background-color: $ph-light;
+  box-shadow: none !important;
+  .btn {
+    background-color: $ph-dark;
+    color: $ph-dark;
+    border: none;
+    pointer-events: none;
+  }
+}

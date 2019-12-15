@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewsBlockComponent } from './news-block/news-block.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsBlockComponent
   ],
   imports: [
     BrowserModule,

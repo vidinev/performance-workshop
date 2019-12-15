@@ -1,0 +1,16 @@
+<div class="news-block p-2">
+    <div class="news-title d-flex align-items-center text-loading-ph px-2">{{news?.title}}</div>
+    <div class="article mx-2 rounded"
+         [class.content-loading-ph]="news.loading"
+         *ngFor="let article of news.items">
+        <div class="article-image image-loading-ph">
+            <img *ngIf="article?.image" [src]="article?.image" alt="{{article?.title}}">
+        </div>
+        <div class="article-title d-flex align-items-center text-loading-ph px-2">{{article?.title}}</div>
+        <div class="article-subtitle align-items-center text-loading-ph px-2">{{article.text}}</div>
+        <div class="article-button-wrapper d-flex align-items-center px-2">
+            <span class="article-date">{{article?.date}}</span>
+            <button type="button" class="btn btn-danger article-button">Show more...</button>
+        </div>
+    </div>
+</div>
