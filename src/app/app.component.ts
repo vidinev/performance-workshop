@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { mainRoutes } from './app-routing.module';
 
 @Component({
   selector: 'ws-root',
@@ -13,19 +14,7 @@ export class AppComponent {
   constructor() {
     setTimeout(() => {
       this.title = 'Performance workshop';
-      this.menu = [{
-        title: 'Initial page load',
-        route: ''
-      }, {
-        title: 'Main section',
-        route: 'main'
-      }, {
-        title: 'Animations',
-        route: ''
-      }, {
-        title: 'Link',
-        route: ''
-      }]
-    }, 500);
+      this.menu = mainRoutes;
+      }, 500);
   }
 }

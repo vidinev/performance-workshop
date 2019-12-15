@@ -1,17 +1,29 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [{
+export const mainRoutes: Routes = [{
   path: '',
-  loadChildren: () => import('./load/load.module').then(m => m.LoadModule)
+  loadChildren: () => import('./load/load.module').then(m => m.LoadModule),
+  data: {
+    title: 'Initial page load'
+  }
 }, {
   path: 'main',
-  loadChildren: () => import('./main-section/main-section.module').then(m => m.MainSectionModule)
+  loadChildren: () => import('./main-section/main-section.module').then(m => m.MainSectionModule),
+  data: {
+    title: 'Main section'
+  }
+}, {
+  path: 'raster',
+  loadChildren: () => import('./raster/raster.module').then(m => m.RasterModule),
+  data: {
+    title: 'Raster'
+  }
 }];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(mainRoutes)
   ],
   exports: [
     RouterModule
