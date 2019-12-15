@@ -4,7 +4,7 @@
     </nav>
     <ul class="nav flex-column bg-light rounded orange-border">
         <li class="nav-item d-block py-2" *ngFor="let menuItem of menu">
-            <a class="nav-link active text-body" href="#">{{menuItem?.title}}</a>
+            <a class="nav-link active text-body" [routerLink]="menuItem?.route">{{menuItem?.title}}</a>
         </li>
     </ul>
     <div class="main bg-light rounded orange-border">

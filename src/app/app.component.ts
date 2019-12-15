@@ -14,12 +14,18 @@ export class AppComponent {
     setTimeout(() => {
       this.title = 'Performance workshop';
       this.menu = [{
-        title: 'Initial page load'
+        title: 'Initial page load',
+        route: ''
       }, {
-        title: 'Animations'
+        title: 'Main section',
+        route: 'main'
       }, {
-        title: 'Link'
+        title: 'Animations',
+        route: ''
+      }, {
+        title: 'Link',
+        route: ''
       }]
-    }, 500)
+    }, 500);
   }
 }
