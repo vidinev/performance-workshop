@@ -21,13 +21,13 @@ export const mainRoutes: Routes = [{
   }
 }, {
   path: 'animation-slow',
-  loadChildren: () => import('./animation-slow/animation-slow.module').then(m => m.AnimationSlowModule),
+  loadChildren: () => import('./animation/animation-slow/animation-slow.module').then(m => m.AnimationSlowModule),
   data: {
     title: 'Animation slow'
   }
 }, {
   path: 'animation-fast',
-  loadChildren: () => import('./animation-fast/animation-fast.module').then(m => m.AnimationFastModule),
+  loadChildren: () => import('./animation/animation-fast/animation-fast.module').then(m => m.AnimationFastModule),
   data: {
     title: 'Animation fast'
   }

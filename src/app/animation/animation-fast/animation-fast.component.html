@@ -1,0 +1,4 @@
+<ws-animation-setup-interface (itemsUpdated)="setItems($event)">
+    <ws-animated-item *ngFor="let item of items; trackBy: trackByIndex;"
+                      [ngStyle]="{'transform': 'translateX(' + item + 'px)'}"></ws-animated-item>
+</ws-animation-setup-interface>

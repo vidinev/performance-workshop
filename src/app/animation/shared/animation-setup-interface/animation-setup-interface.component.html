@@ -11,13 +11,5 @@
 </div>
 
 <div class="wrapper d-flex">
-    <div class="bar bg-danger" *ngFor="let bar of bars; trackBy: trackByIndex;" [style.left.px]="bar">
-        <button class="btn btn-dark btn-inside">B</button>
-        <button class="btn btn-dark btn-inside">B</button>
-        <button class="btn btn-dark btn-inside">B</button>
-        <button class="btn btn-dark btn-inside">B</button>
-        <p class="font-weight-bold text-white text-center">Text</p>
-    </div>
+   <ng-content></ng-content>
 </div>
-
-

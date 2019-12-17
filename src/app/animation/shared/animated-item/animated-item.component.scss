@@ -1,0 +1,27 @@
+@import "../../../../variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 1px 20px 1px;
+  flex: 1;
+  transition: transform 990ms cubic-bezier(0.75, 0, 0.05, 1.1);
+  transition-property: transform, left;
+  padding: 8px;
+  min-width: 12%;
+  width: 12%;
+  max-width: 12%;
+  height: 150px;
+  border: 2px solid black;
+  background: $danger;
+  > p {
+    margin: 0;
+  }
+}
+
+.btn-inside {
+  margin: 5px;
+}

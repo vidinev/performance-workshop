@@ -1,0 +1,6 @@
+<ws-animation-setup-interface (itemsUpdated)="setItems($event)">
+    <ws-animated-item *ngFor="let item of items; trackBy: trackByIndex;"
+                      [style.left.px]="item"></ws-animated-item>
+</ws-animation-setup-interface>
+
+
