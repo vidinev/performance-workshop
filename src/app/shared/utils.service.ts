@@ -1,6 +1,6 @@
 export class UtilsService {
-  static calculatePI() {
-    const iterations = 60000000;
+  static calculatePI(val: number = 60000000) {
+    const iterations = val;
     let pi = 0;
     let n = 1;
     for (let i = 0; i <= iterations; i++)

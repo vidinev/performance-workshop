@@ -1,11 +1,23 @@
-<div class="p-2">
+<div class="d-flex align-items-center p-2">
     <button class="btn btn-dark mr-3" (click)="start()">Start</button>
     <button class="btn btn-danger mr-3" (click)="stop()">Stop</button>
     <button class="btn btn-secondary" (click)="calculatePI()">Run script</button>
+    <input type="text" class="form-control ml-3" placeholder="Script power" [(ngModel)]="power">
+    <input type="text"
+           class="form-control ml-3"
+           placeholder="Items count"
+           [(ngModel)]="itemsCount"
+           (ngModelChange)="fillArray($event)">
 </div>
 
 <div class="wrapper d-flex">
-    <div class="bar" *ngFor="let bar of bars; trackBy: trackByIndex;" [style.height.%]="bar"></div>
+    <div class="bar bg-danger" *ngFor="let bar of bars; trackBy: trackByIndex;" [style.left.px]="bar">
+        <button class="btn btn-dark btn-inside">B</button>
+        <button class="btn btn-dark btn-inside">B</button>
+        <button class="btn btn-dark btn-inside">B</button>
+        <button class="btn btn-dark btn-inside">B</button>
+        <p class="font-weight-bold text-white text-center">Text</p>
+    </div>
 </div>
 
 
