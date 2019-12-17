@@ -25,6 +25,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Animation slow'
   }
+}, {
+  path: 'animation-fast',
+  loadChildren: () => import('./animation-fast/animation-fast.module').then(m => m.AnimationFastModule),
+  data: {
+    title: 'Animation fast'
+  }
 }];
 
 @NgModule({
