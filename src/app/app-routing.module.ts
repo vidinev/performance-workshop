@@ -31,6 +31,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Animation fast'
   }
+}, {
+  path: 'network',
+  loadChildren: () => import('./network/network.module').then(m => m.NetworkModule),
+  data: {
+    title: 'Network'
+  }
 }];
 
 @NgModule({

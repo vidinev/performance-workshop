@@ -15,6 +15,6 @@ export class AppComponent {
     setTimeout(() => {
       this.title = 'Performance workshop';
       this.menu = mainRoutes;
-      }, 500);
+    }, 500);
   }
 }
