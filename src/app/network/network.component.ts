@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'ws-network',
@@ -7,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NetworkComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    // https://jsonblob.com/api/jsonBlob/965c3979-21f2-11ea-b6f9-a9426392bcb0
+    this.http.get('https://jsonblob.com/api/jsonBlob/965c3979-21f2-11ea-b6f9-a9426392bcb0')
+      .subscribe((res) => {
+        console.log(res);
+      })
   }
 
 }
