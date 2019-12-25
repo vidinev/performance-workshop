@@ -1,5 +1,9 @@
-<table>
-    <thead>
+<div>
+    <div class="d-flex justify-content-center py-4" *ngIf="!items?.length">
+        <div class="spinner-border" role="status"></div>
+    </div>
+    <table class="table table-borderless m-3">
+        <thead *ngIf="items.length">
         <tr>
             <th>Name</th>
             <th>Company</th>
@@ -7,8 +11,8 @@
             <th>Email</th>
             <th>Phone</th>
         </tr>
-    </thead>
-    <tbody>
+        </thead>
+        <tbody>
         <tr *ngFor="let item of items;">
             <td>{{item.name}}</td>
             <td>{{item.company}}</td>
@@ -16,5 +20,6 @@
             <td>{{item.email}}</td>
             <td>{{item.phone}}</td>
         </tr>
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
