@@ -37,6 +37,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Network'
   }
+}, {
+  path: 'scrolling',
+  loadChildren: () => import('./scrolling/scrolling.module').then(m => m.ScrollingModule),
+  data: {
+    title: 'Scrolling'
+  }
 }];
 
 @NgModule({
