@@ -1,1 +1,12 @@
-<p>scrolling works!</p>
+<div class="p-4">
+    <button class="btn"
+            [class.btn-dark]="!calc"
+            [class.btn-danger]="calc"
+            (click)="calcOn()">
+        Toggle calculation
+    </button>
+    <h2 *ngFor="let item of items; let index = index; trackBy: trackByIndex;"
+        [style.margin-left.px]="item">
+        Item {{index}}
+    </h2>
+</div>
