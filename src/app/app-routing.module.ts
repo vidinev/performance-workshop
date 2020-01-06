@@ -43,6 +43,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Scrolling'
   }
+}, {
+  path: 'cache',
+  loadChildren: () => import('./cache-leak/cache-leak.module').then(m => m.CacheLeakModule),
+  data: {
+    title: 'Cache leak'
+  }
 }];
 
 @NgModule({

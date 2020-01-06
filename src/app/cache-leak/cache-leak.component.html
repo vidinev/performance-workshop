@@ -1,0 +1,28 @@
+<div class="p-4">
+    <h3 class="mb-4"> Cache: </h3>
+    <h4>{{cacheLeakService.cache | json}}</h4>
+
+    <div class="d-flex align-items-center p-2">
+        <input type="number"
+               class="form-control"
+               placeholder="Top"
+               [(ngModel)]="params.top">
+        <input type="number"
+               class="form-control ml-3"
+               placeholder="Skip"
+               [(ngModel)]="params.skip">
+    </div>
+
+    <button class="btn btn-dark"
+            (click)="loadItems()">
+        Load items
+    </button>
+
+    <table class="table table-borderless m-3">
+        <tbody>
+        <tr *ngFor="let item of items;">
+            <td>{{item.title}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
