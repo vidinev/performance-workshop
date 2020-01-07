@@ -1,8 +1,8 @@
 <div class="p-4">
     <h3 class="mb-4"> Cache: </h3>
-    <h4>{{cacheLeakService.cache | json}}</h4>
+    <h4 *ngFor="let cache of formattedCache;" class="pb-2">{{cache}}</h4>
 
-    <div class="d-flex align-items-center p-2">
+    <div class="d-flex align-items-center pb-4">
         <input type="number"
                class="form-control"
                placeholder="Top"
@@ -11,6 +11,11 @@
                class="form-control ml-3"
                placeholder="Skip"
                [(ngModel)]="params.skip">
+        <input type="text"
+               class="form-control ml-3"
+               placeholder="Search"
+               [(ngModel)]="params.search"
+               (ngModelChange)="search($event)">
     </div>
 
     <button class="btn btn-dark"

@@ -7,12 +7,23 @@ import { CacheLeakService } from './cache-leak.service';
   styleUrls: ['./cache-leak.component.scss']
 })
 export class CacheLeakComponent implements OnInit {
-  params = { top: 10, skip: 0 };
+  params = { top: 10, skip: 0, search: '' };
   items: any[] = [];
+
+  get formattedCache() {
+    return Object.keys(this.cacheLeakService.cache).map((key: string) => {
+      return `${key} : ${JSON.stringify(this.cacheLeakService.cache[key])} \n`;
+    });
+  }
 
   constructor(public cacheLeakService: CacheLeakService) { }
 
   ngOnInit() {
+  }
+
+  search(text) {
+    this.params.search = text as string;
+    this.loadItems();
   }
 
   loadItems() {
