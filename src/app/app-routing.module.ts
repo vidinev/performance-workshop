@@ -49,6 +49,12 @@ export const mainRoutes: Routes = [{
   data: {
     title: 'Cache leak'
   }
+}, {
+  path: 'nodes',
+  loadChildren: () => import('./nodes-leak/nodes-leak.module').then(m => m.NodesLeakModule),
+  data: {
+    title: 'Nodes leak'
+  }
 }];
 
 @NgModule({
