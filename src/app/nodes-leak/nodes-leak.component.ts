@@ -1,34 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'ws-nodes-leak',
   templateUrl: './nodes-leak.component.html',
   styleUrls: ['./nodes-leak.component.scss']
 })
-export class NodesLeakComponent implements OnInit {
+export class NodesLeakComponent {
+  leakedNodes = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  createNodes() {
+    this.createLeakedNodes();
+    this.createGCNodes();
   }
 
-  start() {
-    const x = [];
-    x.push(new Array(1000000).join('x'));
-    NodesLeakComponent.createSomeNodes();
-    setTimeout(() => this.start(), 1000);
+  private static createNode(text) {
+    const div = document.createElement('div');
+    const innerDiv = document.createElement('div');
+    innerDiv.appendChild(document.createTextNode(`${text} - ${new Date().toTimeString()}`));
+    div.appendChild(innerDiv);
+    return div;
   }
 
-  private static createSomeNodes() {
-    let div,
-      i = 100,
-      frag = document.createDocumentFragment();
-    for (; i > 0; i--) {
-      div = document.createElement('div');
-      div.appendChild(document.createTextNode(i + ' - ' + new Date().toTimeString()));
-      frag.appendChild(div);
+  private createGCNodes() {
+    for (let i = 0; i < 500; i++) {
+       const node = NodesLeakComponent.createNode(`Garbage Collected: + ${i}`);
+       document.body.appendChild(node);
+       setTimeout(() => node.remove(), 500);
     }
-    document.getElementById('nodes').appendChild(frag);
+  }
+
+  private createLeakedNodes() {
+    for (let i = 0; i < 500; i++) {
+      const node = NodesLeakComponent.createNode(`Leaked: + ${i}`);
+      document.body.appendChild(node);
+      this.leakedNodes.push(node);
+      setTimeout(() => node.remove(), 500);
+    }
   }
 
 }
