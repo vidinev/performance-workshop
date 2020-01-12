@@ -9,7 +9,7 @@ import { UtilsService } from '../shared/utils.service';
 })
 export class ScrollingComponent implements OnInit {
   items: number[] = [];
-  private calc = false;
+  calc = false;
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
